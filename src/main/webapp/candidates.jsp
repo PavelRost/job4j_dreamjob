@@ -36,6 +36,8 @@
                     <thead>
                     <tr>
                         <th scope="col">Названия</th>
+                        <th scope="col">Фото</th>
+                        <th scope="col">Управление фото</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,6 +48,24 @@
                                     <i class="fa fa-edit mr-3"></i>
                                 </a>
                                 <c:out value="${candidate.name}"/>
+                            </td>
+                            <td>
+                                <a href='<c:url value="/candidate/edit.jsp?id=${candidate.id}"/>'>
+
+                                </a>
+
+                            </td>
+                            <td>
+                                <a href='<c:url value="/candidate/edit.jsp?id=${candidate.id}"/>'>
+                                    Добавить фото
+                                </a>
+
+                            </td>
+                            <td>
+                                <a href='<c:url value="/candidate/edit.jsp?id=${candidate.id}"/>'>
+                                    Удалить фото
+                                </a>
+
                             </td>
                         </tr>
                     </c:forEach>
