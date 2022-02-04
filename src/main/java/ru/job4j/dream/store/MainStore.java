@@ -1,5 +1,6 @@
 package ru.job4j.dream.store;
 
+import ru.job4j.dream.model.Candidate;
 import ru.job4j.dream.model.Post;
 
 public class MainStore {
@@ -13,6 +14,17 @@ public class MainStore {
         System.out.println();
         for (Post post : store.findAllPosts()) {
             System.out.println(post.getId() + " " + post.getName());
+        }
+        System.out.println();
+        store.saveCandidate(new Candidate(0, "Fedor"));
+        store.saveCandidate(new Candidate(0, "Liza"));
+        for (Candidate candidate : store.findAllCandidates()) {
+            System.out.println(candidate.getId() + " " + candidate.getName());
+        }
+        System.out.println();
+        store.saveCandidate(new Candidate(2, "Liza new"));
+        for (Candidate candidate : store.findAllCandidates()) {
+            System.out.println(candidate.getId() + " " + candidate.getName());
         }
     }
 }
