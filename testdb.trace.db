@@ -18,3 +18,87 @@ INSERT INTO candidate(name) VALUES (?) [42102-200]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
 Table "CANDIDATE" not found; SQL statement:
 SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 11:58:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate [42102-200]
+2022-02-05 11:58:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+INSERT INTO candidate(name) VALUES (?) [42102-200]
+2022-02-05 11:58:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 11:58:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+UPDATE candidate SET name = ? WHERE id = ?; [42102-200]
+2022-02-05 11:58:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 11:59:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate [42102-200]
+2022-02-05 11:59:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+INSERT INTO candidate(name) VALUES (?) [42102-200]
+2022-02-05 11:59:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 11:59:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+UPDATE candidate SET name = ? WHERE id = ?; [42102-200]
+2022-02-05 11:59:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 12:00:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate [42102-200]
+2022-02-05 12:07:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate [42102-200]
+2022-02-05 12:07:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+INSERT INTO candidate(name) VALUES (?) [42102-200]
+2022-02-05 12:07:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 12:07:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+UPDATE candidate SET name = ? WHERE id = ?; [42102-200]
+2022-02-05 12:07:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 12:14:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate [42102-200]
+2022-02-05 12:19:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+INSERT INTO candidate(name) VALUES (?) [42102-200]
+2022-02-05 12:19:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
+2022-02-05 12:19:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+UPDATE candidate SET name = ? WHERE id = ?; [42102-200]
+2022-02-05 12:19:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CANDIDATE" не найдена
+Table "CANDIDATE" not found; SQL statement:
+SELECT * FROM candidate WHERE id = ? [42102-200]
