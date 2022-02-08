@@ -56,6 +56,10 @@ public class DbStore implements Store{
         return Lazy.INST;
     }
 
+    public BasicDataSource getPool() {
+        return pool;
+    }
+
     public Collection<Post> findAllPosts() {
         List<Post> posts = new ArrayList<>();
         try (Connection cn = pool.getConnection();
