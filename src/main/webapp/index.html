@@ -24,6 +24,14 @@
             }
             return true;
         }
+        function addRow() {
+            const valueName = $('#name').val();
+            const valueLastName = $('#lastname').val();
+            const valueSex = $('#sex').val();
+            const valueDesc = $('#description').val();
+            $('#tbl tr:last').after('<tr><td>' + valueName +'</td></tr>');
+            $('#tbl td:last').after('<tr><td>' + valueLastName +'</td></tr>');
+        }
     </script>
 </head>
 <body>
@@ -48,10 +56,10 @@
             <input type="text" class="form-control" title="Введите дополнительную информацию о пользователе" id="description">
         </div>
         <button type="button" class="btn btn-default" onclick="return validate();">Отправить</button>
-        <table class="table">
+        <button type="button" class="btn btn-default" onclick="addRow()">Добавить в таблицу</button>
+        <table class="table" id="tbl">
             <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Имя</th>
                 <th scope="col">Фамилия</th>
                 <th scope="col">Пол</th>
@@ -60,7 +68,6 @@
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
                 <td>Федор</td>
                 <td>Достоевский</td>
                 <td>Мужской</td>
