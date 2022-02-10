@@ -12,6 +12,7 @@ import java.util.Objects;
 public class DownloadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("user", req.getSession().getAttribute("user"));
         String name = req.getParameter("name");
         File downloadFile = null;
         for (File file : new File("e:\\images\\").listFiles()) {
