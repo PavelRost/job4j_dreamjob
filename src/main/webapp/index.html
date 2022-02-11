@@ -29,8 +29,7 @@
             const valueLastName = $('#lastname').val();
             const valueSex = $('#sex').val();
             const valueDesc = $('#description').val();
-            $('#tbl tr:last').after('<tr><td>' + valueName +'</td></tr>');
-            $('#tbl td:last').after('<tr><td>' + valueLastName +'</td></tr>');
+            $('#tbl tr:last').after('<tr><td>' + valueName +'</td><td>' + valueLastName +'</td><td>' + valueSex +'</td><td>' + valueDesc +'</td></tr>');
         }
     </script>
 </head>
