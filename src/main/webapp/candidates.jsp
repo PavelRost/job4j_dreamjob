@@ -53,7 +53,7 @@
                     <tr>
                         <th scope="col">Названия</th>
                         <th scope="col">Фото</th>
-                        <th scope="col">Управление фото</th>
+                        <th scope="col">Управление профилем</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -66,22 +66,17 @@
                                 <c:out value="${candidate.name}"/>
                             </td>
                             <td>
-                                <a href='<c:url value="/candidate/edit.jsp?id=${candidate.id}"/>'>
-
-                                </a>
-
+                                <img src="<c:url value='/download?name=${candidate.id}'/>" width="100px" height="100px"/>
                             </td>
                             <td>
-                                <a href='<c:url value="/candidate/edit.jsp?id=${candidate.id}"/>'>
+                                <a href='<c:url value="/upload.jsp?id=${candidate.id}"/>'>
                                     Добавить фото
                                 </a>
-
                             </td>
                             <td>
-                                <a href='<c:url value="/candidate/edit.jsp?id=${candidate.id}"/>'>
-                                    Удалить фото
+                                <a href='<c:url value="/delete.do?id=${candidate.id}"/>'>
+                                    Удалить кандидата и фото
                                 </a>
-
                             </td>
                         </tr>
                     </c:forEach>

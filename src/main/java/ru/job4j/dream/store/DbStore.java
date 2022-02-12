@@ -205,6 +205,17 @@ public class DbStore implements Store{
         }
     }
 
+    public void deleteCandidate(int value) {
+        try (Connection cn = pool.getConnection();
+             PreparedStatement ps =
+                     cn.prepareStatement("DELETE FROM candidate WHERE id = ?;")) {
+            ps.setInt(1, value);
+            ps.execute();
+        } catch (SQLException throwables) {
+            LOG.error("Exception in log", throwables);
+        }
+    }
+
     @Override
     public void saveUser(User user) {
         if (user.getId() == 0) {

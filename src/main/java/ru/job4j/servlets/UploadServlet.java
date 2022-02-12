@@ -18,17 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UploadServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("user", req.getSession().getAttribute("user"));
-        List<String> images = new ArrayList<>();
-        for (File name : new File("e:\\images\\").listFiles()) {
-            images.add(name.getName());
-        }
-        req.setAttribute("images", images);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/upload.jsp");
-        dispatcher.forward(req, resp);
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,7 +34,11 @@ public class UploadServlet extends HttpServlet {
             }
             for (FileItem item : items) {
                 if (!item.isFormField()) {
-                    File file = new File(folder + File.separator + item.getName());
+                    String id = req.getParameter("id");
+                    String[] nameItem = item.getName().split("\\.");
+                    nameItem[0] = id;
+                    String nameNew = String.join(".", nameItem);
+                    File file = new File(folder + File.separator + nameNew);
                     try (FileOutputStream out = new FileOutputStream(file)) {
                         out.write(item.getInputStream().readAllBytes());
                     }
@@ -54,6 +47,6 @@ public class UploadServlet extends HttpServlet {
         } catch (FileUploadException e) {
             e.printStackTrace();
         }
-        doGet(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/candidates.do");
     }
 }

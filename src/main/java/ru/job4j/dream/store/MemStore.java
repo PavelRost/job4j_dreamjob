@@ -65,6 +65,11 @@ public class MemStore implements Store{
     }
 
     @Override
+    public void deleteCandidate(int id) {
+
+    }
+
+    @Override
     public void saveUser(User user) {
 
     }
