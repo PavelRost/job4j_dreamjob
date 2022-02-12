@@ -15,15 +15,11 @@ public class RegServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         req.setCharacterEncoding("UTF-8");
         String email = req.getParameter("email");
         String name = req.getParameter("name");
         String password = req.getParameter("password");
-        if (email.isEmpty() || name.isEmpty() || password.isEmpty()) {
-            req.setAttribute("error", "Все поля должны быть заполнены");
-            req.getRequestDispatcher("reg.jsp").forward(req, resp);
-        } else if (DbStore.instOf().findUserByEmail(email) != null) {
+        if (DbStore.instOf().findUserByEmail(email) != null) {
             req.setAttribute("error", "Пользователь с таким email уже зарегистрирован на сайте");
             req.getRequestDispatcher("reg.jsp").forward(req, resp);
         } else {
