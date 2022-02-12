@@ -23,15 +23,19 @@ public class RegServlet extends HttpServlet {
         if (email.isEmpty() || name.isEmpty() || password.isEmpty()) {
             req.setAttribute("error", "Все поля должны быть заполнены");
             req.getRequestDispatcher("reg.jsp").forward(req, resp);
+        } else if (DbStore.instOf().findUserByEmail(email) != null) {
+            req.setAttribute("error", "Пользователь с таким email уже зарегистрирован на сайте");
+            req.getRequestDispatcher("reg.jsp").forward(req, resp);
+        } else {
+            DbStore.instOf().saveUser(
+                    new User(
+                            0,
+                            name,
+                            email,
+                            password
+                    )
+            );
         }
-        DbStore.instOf().saveUser(
-                new User(
-                        0,
-                        name,
-                        email,
-                        password
-                )
-        );
         req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 }
