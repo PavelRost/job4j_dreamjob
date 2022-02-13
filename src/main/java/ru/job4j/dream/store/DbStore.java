@@ -4,12 +4,14 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import ru.job4j.dream.model.Candidate;
+import ru.job4j.dream.model.City;
 import ru.job4j.dream.model.Post;
 import ru.job4j.dream.model.User;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -22,6 +24,8 @@ public class DbStore implements Store{
     private static final DbStore instance = new DbStore();
 
     private final BasicDataSource pool = new BasicDataSource();
+
+    private final LocalDate currentDate = LocalDate.now();
 
     private DbStore() {
         Properties cfg = new Properties();
@@ -140,7 +144,7 @@ public class DbStore implements Store{
         ) {
             try (ResultSet it = ps.executeQuery()) {
                 while (it.next()) {
-                    candidates.add(new Candidate(it.getInt("id"), it.getString("name")));
+                    candidates.add(new Candidate(it.getInt("id"), it.getString("name"), it.getInt("city_id")));
                 }
             }
         } catch (Exception e) {
@@ -157,7 +161,7 @@ public class DbStore implements Store{
             ps.setInt(1, id);
             try (ResultSet it = ps.executeQuery()) {
                 if (it.next()) {
-                    return new Candidate(it.getInt("id"), it.getString("name"));
+                    return new Candidate(it.getInt("id"), it.getString("name"), it.getInt("city_id"));
                 }
             }
         } catch (Exception e) {
@@ -276,7 +280,58 @@ public class DbStore implements Store{
         return null;
     }
 
+    @Override
+    public Collection<City> findAllCity() {
+        List<City> cities = new ArrayList<>();
+        try (Connection cn = pool.getConnection();
+             PreparedStatement ps =  cn.prepareStatement("SELECT * FROM cities")
+        ) {
+            try (ResultSet it = ps.executeQuery()) {
+                while (it.next()) {
+                    cities.add(new City(it.getInt("id"), it.getString("name")));
+                }
+            }
+        } catch (Exception e) {
+            LOG.error("Exception in log", e);
+        }
+        return cities;
+    }
 
+    @Override
+    public Collection<Post> findAllPostsCurrentDate() {
+        List<Post> posts = new ArrayList<>();
+        try (Connection cn = pool.getConnection();
+             PreparedStatement ps =  cn.prepareStatement("SELECT * FROM post WHERE date = ?")
+        ) {
+            ps.setDate(1, Date.valueOf(currentDate));
+            try (ResultSet it = ps.executeQuery()) {
+                while (it.next()) {
+                    posts.add(new Post(it.getInt("id"), it.getString("name")));
+                }
+            }
+        } catch (Exception e) {
+            LOG.error("Exception in log", e);
+        }
+        return posts;
+    }
+
+    @Override
+    public Collection<Candidate> findAllCandidatesCurrentDate() {
+        List<Candidate> candidates = new ArrayList<>();
+        try (Connection cn = pool.getConnection();
+             PreparedStatement ps =  cn.prepareStatement("SELECT * FROM candidate WHERE date = ?")
+        ) {
+            ps.setDate(1, Date.valueOf(currentDate));
+            try (ResultSet it = ps.executeQuery()) {
+                while (it.next()) {
+                    candidates.add(new Candidate(it.getInt("id"), it.getString("name"), it.getInt("city_id")));
+                }
+            }
+        } catch (Exception e) {
+            LOG.error("Exception in log", e);
+        }
+        return candidates;
+    }
 
 
 }

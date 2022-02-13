@@ -1,4 +1,6 @@
 CREATE TABLE if NOT EXISTS candidate (
     id SERIAL PRIMARY KEY,
-    name TEXT
+    name TEXT,
+    city_id INTEGER,
+    date DATE
 );

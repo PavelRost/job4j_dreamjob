@@ -27,7 +27,7 @@ public class DbStoreTest {
     @Test
     public void whenCreateCandidate() {
         Store store = DbStore.instOf();
-        Candidate candidate = new Candidate(0, "Oleg");
+        Candidate candidate = new Candidate(0, "Oleg", 1);
         store.saveCandidate(candidate);
         Candidate candidateInDb = store.findCandidateById(candidate.getId());
         assertThat(candidateInDb.getName(), is(candidate.getName()));
@@ -49,9 +49,9 @@ public class DbStoreTest {
     public void whenUpdateCandidate() {
         Store store = DbStore.instOf();
         clearCandidateAndResetId((DbStore) store);
-        Candidate candidate1 = new Candidate(0, "Oleg");
+        Candidate candidate1 = new Candidate(0, "Oleg", 1);
         store.saveCandidate(candidate1);
-        Candidate candidate2 = new Candidate(1, "Oleg New");
+        Candidate candidate2 = new Candidate(1, "Oleg New", 1);
         store.saveCandidate(candidate2);
         Candidate candidateInDb = store.findCandidateById(candidate2.getId());
         assertThat(candidateInDb.getName(), is(candidate2.getName()));
@@ -72,10 +72,10 @@ public class DbStoreTest {
     public void whenFindAllCandidates() {
         Store store = DbStore.instOf();
         clearCandidateAndResetId((DbStore) store);
-        Candidate candidate = new Candidate(0, "Oleg");
+        Candidate candidate = new Candidate(0, "Oleg", 1);
         store.saveCandidate(candidate);
         Collection<Candidate> allCandidates = store.findAllCandidates();
-        Collection<Candidate> expected = List.of(new Candidate(1, "Oleg"));
+        Collection<Candidate> expected = List.of(new Candidate(1, "Oleg", 1));
         assertThat(allCandidates, is(expected));
     }
 

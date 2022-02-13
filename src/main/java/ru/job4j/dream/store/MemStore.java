@@ -1,6 +1,7 @@
 package ru.job4j.dream.store;
 
 import ru.job4j.dream.model.Candidate;
+import ru.job4j.dream.model.City;
 import ru.job4j.dream.model.Post;
 import ru.job4j.dream.model.User;
 
@@ -25,9 +26,9 @@ public class MemStore implements Store{
         posts.put(1, new Post(1, "Junior Java Job"));
         posts.put(2, new Post(2, "Middle Java Job"));
         posts.put(3, new Post(3, "Senior Java Job"));
-        candidates.put(1, new Candidate(1, "Junior Java"));
-        candidates.put(2, new Candidate(2, "Middle Java"));
-        candidates.put(3, new Candidate(3, "Senior Java"));
+        candidates.put(1, new Candidate(1, "Junior Java", 2));
+        candidates.put(2, new Candidate(2, "Middle Java", 3));
+        candidates.put(3, new Candidate(3, "Senior Java", 4));
     }
 
     public static Store instOf() {
@@ -76,6 +77,21 @@ public class MemStore implements Store{
 
     @Override
     public User findUserByEmail(String email) {
+        return null;
+    }
+
+    @Override
+    public Collection<City> findAllCity() {
+        return null;
+    }
+
+    @Override
+    public Collection<Post> findAllPostsCurrentDate() {
+        return null;
+    }
+
+    @Override
+    public Collection<Candidate> findAllCandidatesCurrentDate() {
         return null;
     }
 }

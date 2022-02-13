@@ -16,13 +16,13 @@ public class MainStore {
             System.out.println(post.getId() + " " + post.getName());
         }
         System.out.println();
-        store.saveCandidate(new Candidate(0, "Fedor"));
-        store.saveCandidate(new Candidate(0, "Liza"));
+        store.saveCandidate(new Candidate(0, "Fedor", 1));
+        store.saveCandidate(new Candidate(0, "Liza", 2));
         for (Candidate candidate : store.findAllCandidates()) {
             System.out.println(candidate.getId() + " " + candidate.getName());
         }
         System.out.println();
-        store.saveCandidate(new Candidate(2, "Liza new"));
+        store.saveCandidate(new Candidate(2, "Liza new", 3));
         for (Candidate candidate : store.findAllCandidates()) {
             System.out.println(candidate.getId() + " " + candidate.getName());
         }
