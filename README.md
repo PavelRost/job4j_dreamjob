@@ -16,3 +16,14 @@
 
 **Главная страница:**
 ![Главная страница](https://user-images.githubusercontent.com/92044501/153759558-985d5504-c1b6-4c5b-a461-aeef167a05a5.jpg)
+
+**Страница с доступными вакансиями:**
+![Перечень вакансии](https://user-images.githubusercontent.com/92044501/154125624-12dc5748-fc90-4db2-82f0-2586acb43def.jpg)
+
+**Страница с зарегистрированными кандидатами:**
+![Перечень кандидатов](https://user-images.githubusercontent.com/92044501/154125698-14bbceaf-88ff-4e9c-a11a-7828ce7b304b.jpg)
+
+**Экран создания вакансии и внесение нового кандидата:**
+![Создание кандидата](https://user-images.githubusercontent.com/92044501/154125804-6b1a127c-d4ef-495b-9481-d0c6f41582a1.jpg)
+
+![Создание вакансии](https://user-images.githubusercontent.com/92044501/154125818-613ae0f9-48cc-4e1b-9a55-adf151109ad5.jpg)
