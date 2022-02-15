@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Candidate {
     private int id;
     private String name;
-    private int city_id;
+    private int cityId;
 
-    public Candidate(int id, String name, int city_id) {
+    public Candidate(int id, String name, int cityId) {
         this.id = id;
         this.name = name;
-        this.city_id = city_id;
+        this.cityId = cityId;
     }
 
     public int getId() {
@@ -31,11 +31,15 @@ public class Candidate {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Candidate candidate = (Candidate) o;
-        return id == candidate.id &&
-                Objects.equals(name, candidate.name);
+        return id == candidate.id
+                && Objects.equals(name, candidate.name);
     }
 
     @Override

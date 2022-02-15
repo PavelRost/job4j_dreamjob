@@ -17,4 +17,9 @@ public class City {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "City{" + "id=" + id + ", name='" + name + '\'' + '}';
+    }
 }

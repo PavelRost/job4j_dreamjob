@@ -3,6 +3,8 @@
 <%@ page import="ru.job4j.dream.model.Post" %>
 <%@ page import="ru.job4j.dream.model.Candidate" %>
 <%@ page import="ru.job4j.dream.store.DbStore" %>
+<%@ page import="ru.job4j.dream.model.City" %>
+<%@ page import="java.util.List" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,20 +31,6 @@
             }
             return rsl;
         }
-        $(document).ready(function () {
-            $.ajax({
-                type: "GET",
-                url: "http://localhost:8080/dreamjob/cities",
-                dataType: "json",
-                success: function (data) {
-                    let cities = "";
-                    for (let i = 0; i < data.length; i++) {
-                        cities += "<option value=" + data[i]['id'] + ">" + data[i]['name'] + "</option>";
-                    }
-                    $('#city').html(cities);
-                }
-            })
-        })
     </script>
 
     <title>Работа мечты</title>
@@ -90,18 +78,14 @@
                         <label>Имя</label>
                         <input type="text" class="form-control" title="Введите новое имя кандидата" id="editCandidate" name="name" value="<%=candidate.getName()%>">
                     </div>
-                    <div>
-                        <label>Город</label>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Выберите город кандидата
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                    <div class="form-group">
+                        <label>Город кандидата</label>
+                        <br>
+                        <select class="form-select" aria-label="Default select example">
+                            <% for (City city : DbStore.instOf().findAllCity()) { %>
+                                <option value="<%= city.getId() %>"><%= city.getName() %></option>
+                            <% } %>
+                        </select>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary" onclick="return validate();">Сохранить</button>
