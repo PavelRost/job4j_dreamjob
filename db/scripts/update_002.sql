@@ -1,6 +1,5 @@
-CREATE TABLE if NOT EXISTS candidate (
+CREATE TABLE if NOT EXISTS cities (
     id SERIAL PRIMARY KEY,
-    name TEXT,
-    city_id INTEGER,
-    date DATE
+    name TEXT
 );
+INSERT INTO cities(name) VALUES ('Санкт-Петербург');
